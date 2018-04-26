@@ -1,6 +1,6 @@
 # EskaStreamGrabber
-Skrypt do pobierania linków do streamów radia Eska Rock i innych, wraz z aktualnymi tokenami. Dzięki temu możesz uruchomić te radia używając własnych aplikacji. Domyślnie Radio Eska pozwala na streamowanie stacji tylko i wyłącznie na własnych dedykowanych aplikacjach mobilnych i poprzez przeglądarke internetową na ich stronie web.
-Skrypt napisałem dla własnych celów (uruchamianie Eski przy pomocy jednego klawisza na pilocie), ale zapraszam innych do używania go :)
+Skrypt do pobierania linków do streamów radia Eska Rock i innych, wraz z aktualnymi tokenami. Dzięki temu możesz uruchomić te radia używając własnych aplikacji. Domyślnie Radio Eska pozwala na streamowanie stacji tylko i wyłącznie na własnych dedykowanych aplikacjach mobilnych i poprzez przeglądarke internetową na ich stronie web.  
+Skrypt napisany dla celów własnych (uruchamianie Eski przy pomocy jednego klawisza na pilocie), ale zapraszam innych do używania go również :)
  
  ## Funkcje:
 - pobiera aktualny stream link i zapisuje w uniwersalnym pliku m3u, umozliwiając integrację skryptu z kazdym odtwarzaczem i innymi skryptami,
