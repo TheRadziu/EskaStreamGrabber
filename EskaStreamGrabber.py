@@ -1,4 +1,4 @@
-################# Developed by TheRadziu #################
+################# Developed by TheRadziu v1.1 #################
 
 from urllib2 import urlopen
 import re
@@ -33,13 +33,13 @@ args, leftovers = parser.parse_known_args()
 def main(): 
 	#Grab tokens
 	source_site = urlopen(url_radio).read().decode('utf-8')
-	m = re.compile('.+http://waw.ic.smcdn.pl/'+ url_stream_file +''+ extension +'([^\']*).*')
+	m = re.compile('<input type="hidden" name="icsu" id="icsu" value="'+'([^\']*).*'+'" />')
 
 	#Create URL if tokens are present
 	for line in source_site.splitlines():
 		res = m.match(line)
 		if res is not None:
-			res_string = "http://waw.ic.smcdn.pl/"+ url_stream_file +".aac{}".format(res.groups()[0].decode("utf-8"))
+			res_string = "https://waw.ic.smcdn.pl/"+ url_stream_file +".aac?{}".format(res.groups()[0].decode("utf-8"))
 			
 	#Get full path with filename
 	full_path = current_dir + "/" + file_name + ".m3u"
@@ -61,37 +61,37 @@ if args.lista == True:
 	print (lista_stacji)
 	exit()
 elif args.help == True:
-	print ('Eska Stream Grabber. Napisane przez TheRadziu & juliosueiras\n Skrypt wymaga wybrania conajmniej jednej stacji:\n')
+	print ('Eska Token grabber. Napisane przez TheRadziu & juliosueiras\n Skrypt wymaga wybrania conajmniej jednej stacji:\n')
 	print (lista_stacji)
 	exit()
 elif args.rock == True:
 	print ('Wybrano: Eska ROCK')
-	url_radio = 'http://www.eskago.pl/radio/eska-rock'
+	url_radio = 'https://www.eskago.pl/radio/eska-rock'
 	url_stream_file = 't041-1'
 	extension = '.aac'
 	file_name = 'Eska Rock'
 	main()
 elif args.kultowa_godzina == True:
 	print ('Wybrano: Eska ROCK Kultowa Godzina')
-	url_radio = 'http://www.eskago.pl/radio/eska-rock-kultowa-godzina'
+	url_radio = 'https://www.eskago.pl/radio/eska-rock-kultowa-godzina'
 	url_stream_file = 't013-1'
 	file_name = 'Eska Rock Kultowa Godzina'
 	main()
 elif args.hot_rock == True:
 	print ('Wybrano: Eska ROCK Hot Rock')
-	url_radio="http://www.eskago.pl/radio/eska-rock-hot-rock"
+	url_radio="https://www.eskago.pl/radio/eska-rock-hot-rock"
 	url_stream_file="t028-1"
 	file_name="Eska Rock Hot Rock"
 	main()
 elif args.alternative == True:
 	print ('Wybrano: Eska ROCK Alternative')
-	url_radio = 'http://www.eskago.pl/radio/eska-rock-alternative'
+	url_radio = 'https://www.eskago.pl/radio/eska-rock-alternative'
 	url_stream_file = 't015-1'
 	file_name = 'Eska Rock Alternative'
 	main()
 elif args.polska == True:
 	print  ('Wybrano: Eska ROCK Polska')
-	url_radio = 'http://www.eskago.pl/radio/eska-rock-polska'
+	url_radio = 'https://www.eskago.pl/radio/eska-rock-polska'
 	url_stream_file = 't008-1'
 	file_name = 'Eska Rock Polska'
 	main()
